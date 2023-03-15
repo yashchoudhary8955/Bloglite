@@ -1,0 +1,31 @@
+<!-- main.html -->
+{% extends "base.html" %}
+{% block content %}
+<h1>My Posts</h1>
+<ul>
+  {% for post in posts %}
+    <li>
+      <h2>{{ post.name }}</h2>
+      <p>{{ post.description }}</p>
+      <img src="{{ post.image }}" alt="{{ post.name }}">
+      <a href="{{ url_for('edit_post', post_id=post.id) }}">Edit</a>
+      </form>
+      <div class="like-count">
+        Likes: {{ post.likes.count() }}
+      </div>
+      <div class="like-count">
+        Comments: {{ post.comments.count() }}
+      </div>
+    <div class="comments">
+        <h3>Comments</h3>
+        <ul>
+            {% for comment in post.comments %}
+            <li>{{ comment.content }}</li>
+            {% endfor %}
+        </ul>
+
+
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

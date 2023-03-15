@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Blog LIte </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .login-container {
+            max-width: 360px;
+            margin: 0 auto;
+            padding: 24px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-form {
+            margin: 0 0 24px 0;
+        }
+
+        .form-label {
+            font-weight: bold;
+            margin: 0 0 8px 0;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            border: 0;
+            border-radius: 4px;
+            background-color: #0099ff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #0077cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Blog Lite login</h1>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }} <br>
+            {{ form.username }} <br> <br>
+            {{ form.password }} <br> <br>
+            {{ form.submit }}
+        </form>    
+        <a href="{{ url_for('signup') }}">Don't have an account? Sign Up</a>
+
+    </div>
+</body>
+</html>

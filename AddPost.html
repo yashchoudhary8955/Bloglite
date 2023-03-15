@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Post</title>
+  <style>
+    form {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    input[type="text"], input[type="file"], textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  {% extends "base.html" %}
+  {% block content %}
+  <h1>Add a New Post </h1>
+  <form action="/AddPost" method="post" enctype="multipart/form-data">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description"></textarea><br>
+    <label for="image">Image:</label><br>
+    <input type="file" id="image" name="image"><br>
+    <a href="/AddPost"><input type="submit" value="Submit"></a>
+  </form> 
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+
+<html>
+<head>
+  <title>Welcome to Blog Lite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .nav-item {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .nav-item a:hover {
+      color: #0099ff;
+    }
+
+    .welcome {
+      margin-top: 50px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    {%block content%}
+    <div class="nav-item">
+      <a href="{{ url_for('search') }}">Search</a>
+    </div>
+    <div class="nav-item">
+      <a href="{{ url_for('profile',username=user.username) }}">My Profile</a>
+    </div>
+    <div class="nav-item">
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <div class="nav-item">
+      <a href="{{ url_for('AddPost') }}">Add Post</a>
+    </div>
+    <div class="nav-item">
+      <a href="{{ url_for('follow',username=user.username) }}">Follow</a>
+    </div>
+    <div class="nav-item">
+      <a href="{{ url_for('unfollow',username=user.username) }}">UnFollow</a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="{{ url_for('myposts') }}">My Posts</a>
+    </div>
+
+    <div class="nav-item">
+      <a href="{{ url_for('following') }}">My Feed</a>
+    </div>
+    {%endblock%}
+    
+</div>
+  </nav>
+  <div class="welcome">
+    Welcome to Blog Lite!
+  </div>
+</body>
+</html>
+
+
+

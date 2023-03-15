@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>UnFollow a User</h1>
+<form action="/unfollow" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <input type="submit" value="Unfollow">
+  </form>
+{% endblock %}

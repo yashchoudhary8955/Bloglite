@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Social Network</title>
+  </head>
+  <body>
+    {% extends "base.html" %}
+    {% block content %}
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <h1>Welcome to my social network!</h1>
+    <form action="{{ url_for('follow') }}" method="post">
+      <label for="username">Follow a user:</label>
+      <input type="text" id="username" name="username" placeholder="Enter a username">
+      <input type="submit" value="Follow">
+    </form>
+    <h2>People you are following:</h2>
+    <ul>
+      {% for user in current_user.followed %}
+        <li>{{ user.username }}</li>
+      {% endfor %}
+    </ul>
+    {% endblock %}
+  </body>
+</html>

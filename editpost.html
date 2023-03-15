@@ -1,0 +1,14 @@
+<!-- edit_post.html -->
+
+<form method="post" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{ post.name }}">
+    <br>
+    <label for="description">Description:</label>
+    <textarea name="description">{{ post.description }}</textarea>
+    <br>
+    <label for="image">Image:</label>
+    <input type="file" name="image">
+    <br>
+    <input type="submit" value="Save Changes">
+</form>

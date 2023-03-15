@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>All Posts</h1>
+{% for post in posts %}
+    <h2><a href="{{ url_for('post', post_id=post.id) }}">{{ post.name }}</a></h2>
+    <p>{{ post.description }}</p>
+    <img src="data:image/png;base64,{{ post.image }}" alt="{{ post.name }}">
+{% endfor %}
+{% endblock %}
